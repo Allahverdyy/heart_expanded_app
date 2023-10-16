@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:heart_expanded_app/views/view_heart_expanded/heart_expanded_view.dart';
-import 'package:heart_expanded_app/views/view_splash/splash_view.dart';
+import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      home: ExpandedDemo(),
     );
   }
 }
