@@ -13,19 +13,14 @@ class SplashView extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width,
             height: MediaQuery.sizeOf(context).height,
             child: Image.asset(
-              'assets/images/images_splash_bg.png',
-              fit: BoxFit.fill,
-            ),
+                                'assets/images/png/images_splash_bg.png', fit: BoxFit.fill,),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
                 child: Image.asset(
-                  'assets/images/images_splash_logo.png',
-                  width: MediaQuery.sizeOf(context).width * 0.25,
-                  fit: BoxFit.fill,
-                ),
+                                'assets/images/png/images_splash_logo.png'),
               ),
               const Text(
                 'Heart Expanded',
