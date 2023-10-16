@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
 
@@ -13,6 +14,8 @@ class HeartScreenOne extends StatelessWidget {
           Expanded(
               flex: 1,
               child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.1,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -26,17 +29,42 @@ class HeartScreenOne extends StatelessWidget {
                     tileMode: TileMode.mirror,
                   ),
                 ),
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.6,
-                child: const Center(
-                    child: Text(
-                  "FLUTTER",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )),
-              )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: const Center(
+                            child: Text(
+                          "FLUTTER",
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        )),
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: IconButton(
+                        iconSize: MediaQuery.of(context).size.width / 16,
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ExpandedDemo()));
+                        },
+                        icon: const Icon(
+                          Icons.home,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ))
+                  ],
+                ),
+              )
+            ),
           Expanded(
               flex: 9,
               child: Row(

@@ -3,7 +3,6 @@ import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_s
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
 
-
 class ExpandedDemo extends StatelessWidget {
   const ExpandedDemo({super.key});
 
@@ -16,10 +15,56 @@ class ExpandedDemo extends StatelessWidget {
               flex: 1,
               child: Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.5,
-                color: Colors.purple,
-                child: const Center(child: Text("Heart Expanded", )),
-              )),
+                height: MediaQuery.of(context).size.height * 0.1,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment(0.8, 1),
+                    colors: <Color>[
+                      Color.fromARGB(255, 169, 192, 206),
+                      Color.fromARGB(255, 73, 181, 214),
+                      Color.fromARGB(255, 79, 174, 252),
+                      Color.fromARGB(255, 0, 77, 219),
+                    ],
+                    tileMode: TileMode.mirror,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: const Center(
+                            child: Text(
+                          "FLUTTER'S ROAD",
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        )),
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: IconButton(
+                        iconSize: MediaQuery.of(context).size.width / 16,
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ExpandedDemo()));
+                        },
+                        icon: const Icon(
+                          Icons.home,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ))
+                  ],
+                ),
+              )
+            ),
           Expanded(
               flex: 9,
               child: Row(
@@ -35,15 +80,9 @@ class ExpandedDemo extends StatelessWidget {
                         //dikey yazdırma
                         // padding: EdgeInsets.symmetric(
                         //     horizontal: MediaQuery.of(context).size.width * 0.5),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: MediaQuery.of(context).size.width * 3 / 8,
-                            // vertical:
-                            //     MediaQuery.of(context).size.height * 0.25
-                          ),
-                          child: const Center(child: Text("Görsel", style: TextStyle(color: Colors.yellow),)),
-                        ),
-                      )),
+                        child: Image.asset('assets/images/png/images_flutter_bg.png', fit: BoxFit.fitHeight,),
+                    )
+                  ),
                   Expanded(
                       flex: 1,
                       child: Column(
@@ -60,7 +99,9 @@ class ExpandedDemo extends StatelessWidget {
                                         const HeartScreenOne()));
                               },
                               child: Image.asset(
-                                  'assets/images/png/images_heart.png', color: Colors.red,width: MediaQuery.of(context).size.width/ 8),
+                                  'assets/images/png/images_heart.png',
+                                  color: Colors.red,
+                                  width: MediaQuery.of(context).size.width / 8),
                             ),
                           )),
                           Expanded(
@@ -77,7 +118,6 @@ class ExpandedDemo extends StatelessWidget {
                               child: Icon(Icons.heart_broken_sharp,
                                   color: Colors.red,
                                   size: MediaQuery.sizeOf(context).width / 8),
-                            
                             ),
                           )),
                           Expanded(
@@ -92,7 +132,9 @@ class ExpandedDemo extends StatelessWidget {
                                         const HeartScreenThree()));
                               },
                               child: Image.asset(
-                                  'assets/images/png/images_anatomical_heart2.png', color: Colors.red,width: MediaQuery.of(context).size.width/ 8),
+                                  'assets/images/png/images_anatomical_heart2.png',
+                                  color: Colors.red,
+                                  width: MediaQuery.of(context).size.width / 8),
                             ),
                           ))
                         ],

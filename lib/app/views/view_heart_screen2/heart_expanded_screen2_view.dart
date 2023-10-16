@@ -14,6 +14,8 @@ class HeartScreenTwo extends StatelessWidget {
           Expanded(
               flex: 1,
               child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.1,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -27,16 +29,40 @@ class HeartScreenTwo extends StatelessWidget {
                     tileMode: TileMode.mirror,
                   ),
                 ),
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.5,
-                child: const Center(
-                    child: Text(
-                  "FLUTTER FIREBASE",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: const Center(
+                            child: Text(
+                          "FLUTTER FIREBASE",
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        )),
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: IconButton(
+                        iconSize: MediaQuery.of(context).size.width / 16,
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ExpandedDemo()));
+                        },
+                        icon: const Icon(
+                          Icons.home,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ))
+                  ],
+                ),
               )),
           Expanded(
               flex: 9,
@@ -82,7 +108,8 @@ class HeartScreenTwo extends StatelessWidget {
                               },
                               child: Image.asset(
                                 'assets/images/png/images_heart.png',
-                                color: Colors.red,width: MediaQuery.of(context).size.width/ 8,
+                                color: Colors.red,
+                                width: MediaQuery.of(context).size.width / 8,
                               ),
                             ),
                           )),
@@ -104,8 +131,7 @@ class HeartScreenTwo extends StatelessWidget {
                               ),
                             ),
                             child: TextButton(
-                              onPressed: () {
-                              },
+                              onPressed: () {},
                               child: Icon(Icons.heart_broken_sharp,
                                   color: Colors.white,
                                   size: MediaQuery.sizeOf(context).width / 8),
@@ -122,8 +148,10 @@ class HeartScreenTwo extends StatelessWidget {
                                     builder: (context) =>
                                         const HeartScreenThree()));
                               },
-                             child: Image.asset(
-                                  'assets/images/png/images_anatomical_heart2.png', color: Colors.red,width: MediaQuery.of(context).size.width/ 8),
+                              child: Image.asset(
+                                  'assets/images/png/images_anatomical_heart2.png',
+                                  color: Colors.red,
+                                  width: MediaQuery.of(context).size.width / 8),
                             ),
                           ))
                         ],

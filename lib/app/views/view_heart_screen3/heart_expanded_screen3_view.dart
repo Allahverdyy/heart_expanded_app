@@ -15,7 +15,7 @@ class HeartScreenThree extends StatelessWidget {
               flex: 1,
               child: Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.5,
+                height: MediaQuery.of(context).size.height * 0.1,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -30,14 +30,40 @@ class HeartScreenThree extends StatelessWidget {
                     tileMode: TileMode.mirror,
                   ),
                 ),
-                child: const Center(
-                    child: Text(
-                  "FLUTTER BLOC CUBIT",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: const Center(
+                            child: Text(
+                          "FLUTTER BLOC CUBIT",
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        )),
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child: IconButton(
+                        iconSize: MediaQuery.of(context).size.width / 16,
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ExpandedDemo()));
+                        },
+                        icon: const Icon(
+                          Icons.home,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ))
+                  ],
+                ),
               )),
           Expanded(
               flex: 9,
