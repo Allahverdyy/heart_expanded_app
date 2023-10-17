@@ -2,14 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
+import 'package:heart_expanded_app/app/core/widgets/button_widget.dart';
 import 'package:heart_expanded_app/app/router/app_router.gr.dart';
-import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
 
 @RoutePage()  
 class ExpandedDemoView extends StatelessWidget {
-   ExpandedDemoView({super.key});
+   const ExpandedDemoView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,20 +67,9 @@ class ExpandedDemoView extends StatelessWidget {
                     flex: 1,
                       child: Column(
                         children: [
-                          Expanded(
-                              child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * 9 / 10,
-                            color: Colors.black,
-                            child: TextButton(
-                              onPressed: () {
-                                context.router.push(const HeartScreenOneRoute());
-                              },
-                              child: Image.asset(flutterHeart,
-                                  color: Colors.purple,
-                                  width: MediaQuery.of(context).size.width / 8),
-                            ),
-                          )),
+                          const Expanded(
+                              child: ButtonWidget()
+                          ),
                           Expanded(
                               child: Container(
                             width: double.infinity,
@@ -122,5 +111,7 @@ class ExpandedDemoView extends StatelessWidget {
     );
   }
 }
+
+
 
 

@@ -9,7 +9,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i6;
 import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart'
     as _i1;
 import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart'
@@ -25,11 +24,9 @@ abstract class $AppRouter extends _i5.RootStackRouter {
   @override
   final Map<String, _i5.PageFactory> pagesMap = {
     ExpandedDemoRoute.name: (routeData) {
-      final args = routeData.argsAs<ExpandedDemoRouteArgs>(
-          orElse: () => const ExpandedDemoRouteArgs());
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i1.ExpandedDemoView(key: args.key),
+        child: const _i1.ExpandedDemoView(),
       );
     },
     HeartScreenOneRoute.name: (routeData) {
@@ -55,31 +52,16 @@ abstract class $AppRouter extends _i5.RootStackRouter {
 
 /// generated route for
 /// [_i1.ExpandedDemoView]
-class ExpandedDemoRoute extends _i5.PageRouteInfo<ExpandedDemoRouteArgs> {
-  ExpandedDemoRoute({
-    _i6.Key? key,
-    List<_i5.PageRouteInfo>? children,
-  }) : super(
+class ExpandedDemoRoute extends _i5.PageRouteInfo<void> {
+  const ExpandedDemoRoute({List<_i5.PageRouteInfo>? children})
+      : super(
           ExpandedDemoRoute.name,
-          args: ExpandedDemoRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'ExpandedDemoRoute';
 
-  static const _i5.PageInfo<ExpandedDemoRouteArgs> page =
-      _i5.PageInfo<ExpandedDemoRouteArgs>(name);
-}
-
-class ExpandedDemoRouteArgs {
-  const ExpandedDemoRouteArgs({this.key});
-
-  final _i6.Key? key;
-
-  @override
-  String toString() {
-    return 'ExpandedDemoRouteArgs{key: $key}';
-  }
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
 
 /// generated route for

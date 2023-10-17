@@ -47,7 +47,7 @@ class AppBarExpandedWidgets extends StatelessWidget {
                 child: IconButton(
                   iconSize: MediaQuery.of(context).size.width / 16,
                   onPressed: () {
-                    context.router.push(ExpandedDemoRoute());
+                    context.router.push(const ExpandedDemoRoute());
                   }, 
                   icon: const Icon(
                     Icons.home,
