@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
 
-class HeartScreenThree extends StatelessWidget {
-  const HeartScreenThree({super.key});
+@RoutePage()  
+class HeartScreenThreeView extends StatelessWidget {
+  const HeartScreenThreeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +57,7 @@ class HeartScreenThree extends StatelessWidget {
                         iconSize: MediaQuery.of(context).size.width / 16,
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const ExpandedDemo()));
+                              builder: (context) => ExpandedDemoView()));
                         },
                         icon: const Icon(
                           Icons.home,
@@ -90,7 +93,7 @@ class HeartScreenThree extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(16),
                           child: Image.asset(
-                            'assets/images/png/images_flutter_bloc_cubit_logo.png',
+                            flutterBloc,
                             width: MediaQuery.sizeOf(context).width,
                           ),
                         ),
@@ -109,11 +112,10 @@ class HeartScreenThree extends StatelessWidget {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) =>
-                                        const HeartScreenOne()));
+                                        const HeartScreenOneView()));
                               },
-                              child: Image.asset(
-                                  'assets/images/png/images_heart.png',
-                                  color: Colors.red,
+                              child: Image.asset(flutterHeart,
+                                  color: Colors.greenAccent,
                                   width: MediaQuery.of(context).size.width / 8),
                             ),
                           )),
@@ -126,10 +128,10 @@ class HeartScreenThree extends StatelessWidget {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) =>
-                                        const HeartScreenTwo()));
+                                        const HeartScreenTwoView()));
                               },
                               child: Icon(Icons.heart_broken_sharp,
-                                  color: Colors.red,
+                                  color: Colors.greenAccent,
                                   size: MediaQuery.sizeOf(context).width / 8),
                             ),
                           )),
@@ -153,8 +155,7 @@ class HeartScreenThree extends StatelessWidget {
                             ),
                             child: TextButton(
                               onPressed: () {},
-                              child: Image.asset(
-                                  'assets/images/png/images_anatomical_heart2.png',
+                              child: Image.asset(flutterAnatomicalHeart,
                                   width: MediaQuery.of(context).size.width / 8),
                             ),
                           ))

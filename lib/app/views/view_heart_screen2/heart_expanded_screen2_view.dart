@@ -1,69 +1,28 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart';
+import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
+import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
 
-class HeartScreenTwo extends StatelessWidget {
-  const HeartScreenTwo({super.key});
+@RoutePage()  
+class HeartScreenTwoView extends StatelessWidget {
+  const HeartScreenTwoView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-              flex: 1,
-              child: Container(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.1,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment(0.8, 1),
-                    colors: <Color>[
-                      Color.fromARGB(255, 231, 206, 169),
-                      Color.fromARGB(255, 214, 181, 73),
-                      Color.fromARGB(255, 252, 191, 79),
-                      Color.fromARGB(255, 219, 124, 0),
-                    ],
-                    tileMode: TileMode.mirror,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: Container(
-                        padding: EdgeInsets.only(top: 20),
-                        child: const Center(
-                            child: Text(
-                          "FLUTTER FIREBASE",
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        )),
-                      ),
-                    ),
-                    Expanded(
-                        child: Container(
-                      padding: EdgeInsets.only(top: 20),
-                      child: IconButton(
-                        iconSize: MediaQuery.of(context).size.width / 16,
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const ExpandedDemo()));
-                        },
-                        icon: const Icon(
-                          Icons.home,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ))
-                  ],
-                ),
-              )),
+          const AppBarExpandedWidgets(
+            title: 'FLUTTER FIREBASE',
+            appBarColors: <Color>[
+              Color.fromARGB(255, 231, 206, 169),
+              Color.fromARGB(255, 214, 181, 73),
+              Color.fromARGB(255, 252, 191, 79),
+              Color.fromARGB(255, 219, 124, 0),
+            ],
+          ),
           Expanded(
               flex: 9,
               child: Row(
@@ -74,12 +33,12 @@ class HeartScreenTwo extends StatelessWidget {
                       flex: 3,
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.90,
+                        color: Colors.white,
+                        padding: const EdgeInsets.all(40),
                         child: Image.asset(
-                          'assets/images/png/images_flutter_firebase_logo.png',
+                          flutterFirebase,
                           width: MediaQuery.sizeOf(context).width,
                         ),
-                        color: Colors.white,
-                        padding: EdgeInsets.all(40),
                         // //dikey yazdırma
                         // // padding: EdgeInsets.symmetric(
                         // //     horizontal: MediaQuery.of(context).size.width * 0.5),
@@ -104,11 +63,11 @@ class HeartScreenTwo extends StatelessWidget {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) =>
-                                        const HeartScreenOne()));
+                                        const HeartScreenOneView()));
                               },
                               child: Image.asset(
-                                'assets/images/png/images_heart.png',
-                                color: Colors.red,
+                                flutterHeart,
+                                color: Colors.amber[600],
                                 width: MediaQuery.of(context).size.width / 8,
                               ),
                             ),
@@ -146,11 +105,10 @@ class HeartScreenTwo extends StatelessWidget {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) =>
-                                        const HeartScreenThree()));
+                                        const HeartScreenThreeView()));
                               },
-                              child: Image.asset(
-                                  'assets/images/png/images_anatomical_heart2.png',
-                                  color: Colors.red,
+                              child: Image.asset(flutterAnatomicalHeart,
+                                  color: Colors.amber[600],
                                   width: MediaQuery.of(context).size.width / 8),
                             ),
                           ))
