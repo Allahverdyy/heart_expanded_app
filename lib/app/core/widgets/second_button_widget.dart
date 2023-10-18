@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:heart_expanded_app/app/router/app_router.gr.dart';
 
 class SecondButtonWidget extends StatelessWidget {
   final List<Color> secondButtonBg;
@@ -27,7 +29,9 @@ class SecondButtonWidget extends StatelessWidget {
         ),
       ),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          context.router.push(const HeartScreenTwoRoute());
+        },
         child: Icon(Icons.heart_broken_sharp,
             color: imageColor,
             size: MediaQuery.sizeOf(context).width / 8),

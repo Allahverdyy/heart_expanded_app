@@ -34,12 +34,12 @@ class HeartScreenOneView extends StatelessWidget {
                       flex: 3,
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.90,
+                        color: Colors.white,
+                        padding: const EdgeInsets.all(40),
                         child: Image.asset(
                           flutter,
                           width: MediaQuery.sizeOf(context).width,
                         ),
-                        color: Colors.white,
-                        padding: EdgeInsets.all(40),
                         // //dikey yazdırma
                         // // padding: EdgeInsets.symmetric(
                         // //     horizontal: MediaQuery.of(context).size.width * 0.5),

@@ -31,7 +31,7 @@ class ThirdButtonWidget extends StatelessWidget {
       child: TextButton(
         onPressed: () {
           context.router
-              .push(const HeartScreenTwoRoute());
+              .push(const HeartScreenThreeRoute());
         },
         child: Image.asset(flutterAnatomicalHeart,
             color: imageColor,
