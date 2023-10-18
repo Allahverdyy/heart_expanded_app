@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/button_widget.dart';
+import 'package:heart_expanded_app/app/core/widgets/first_button_widget.dart';
 import 'package:heart_expanded_app/app/router/app_router.gr.dart';
 @RoutePage()
 class ExpandedDemoView extends StatelessWidget {
@@ -62,21 +63,7 @@ class ExpandedDemoView extends StatelessWidget {
                       flex: 1,
                       child: Column(
                         children: [
-                          Expanded(
-                              child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * 9 / 10,
-                            color: Colors.black,
-                            child: TextButton(
-                              onPressed: () {
-                                context.router
-                                    .push(const HeartScreenOneRoute());
-                              },
-                              child: Image.asset(flutterHeart,
-                                  color: Colors.purple,
-                                  width: MediaQuery.of(context).size.width / 8),
-                            ),
-                          )),
+                          const FirstButtonWidget(),
                           Expanded(
                               child: Container(
                             width: double.infinity,
