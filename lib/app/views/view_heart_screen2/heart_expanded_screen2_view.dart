@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/first_button_widget.dart';
+import 'package:heart_expanded_app/app/core/widgets/second_button_widget.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
 
-@RoutePage()  
+@RoutePage()
 class HeartScreenTwoView extends StatelessWidget {
   const HeartScreenTwoView({super.key});
 
@@ -55,33 +56,18 @@ class HeartScreenTwoView extends StatelessWidget {
                       flex: 1,
                       child: Column(
                         children: [
-                           const FirstButtonWidget(
+                          const FirstButtonWidget(
                             imageColor: Colors.amber,
                           ),
-                          Expanded(
-                              child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * 9 / 10,
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment(0.8, 1),
-                                colors: <Color>[
-                                  Color.fromARGB(255, 231, 206, 169),
-                                  Color.fromARGB(255, 214, 181, 73),
-                                  Color.fromARGB(255, 252, 191, 79),
-                                  Color.fromARGB(255, 219, 124, 0),
-                                ],
-                                tileMode: TileMode.mirror,
-                              ),
-                            ),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Icon(Icons.heart_broken_sharp,
-                                  color: Colors.white,
-                                  size: MediaQuery.sizeOf(context).width / 8),
-                            ),
-                          )),
+                          const SecondButtonWidget(
+                            secondButtonBg: <Color>[
+                              Color.fromARGB(255, 231, 206, 169),
+                              Color.fromARGB(255, 214, 181, 73),
+                              Color.fromARGB(255, 252, 191, 79),
+                              Color.fromARGB(255, 219, 124, 0),
+                            ],
+                            imageColor: Colors.white,
+                          ),
                           Expanded(
                               child: Container(
                             width: double.infinity,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/first_button_widget.dart';
+import 'package:heart_expanded_app/app/core/widgets/second_button_widget.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
 
@@ -64,22 +65,9 @@ class HeartScreenOneView extends StatelessWidget {
                             ],
                             imageColor: Colors.white,
                           ),
-                          Expanded(
-                              child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * 9 / 10,
-                            color: Colors.black,
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) =>
-                                        const HeartScreenTwoView()));
-                              },
-                              child: Icon(Icons.heart_broken_sharp,
-                                  color: Colors.blue,
-                                  size: MediaQuery.sizeOf(context).width / 8),
-                            ),
-                          )),
+                          const SecondButtonWidget(
+                            imageColor: Colors.blue,
+                          ),
                           Expanded(
                               child: Container(
                             width: double.infinity,
