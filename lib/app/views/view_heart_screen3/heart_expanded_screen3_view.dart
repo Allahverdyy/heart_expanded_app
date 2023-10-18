@@ -2,11 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
-import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart';
+import 'package:heart_expanded_app/app/core/widgets/button_widget.dart';
+import 'package:heart_expanded_app/app/router/app_router.gr.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart';
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
 
-@RoutePage()  
+@RoutePage()
 class HeartScreenThreeView extends StatelessWidget {
   const HeartScreenThreeView({super.key});
 
@@ -15,13 +16,16 @@ class HeartScreenThreeView extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          AppBarExpandedWidgets(title: 'FLUTTER BLOC CUBIT', appBarColors: <Color>[
-                                  Color.fromARGB(255, 138, 185, 157),
-                                  Color.fromARGB(255, 67, 212, 145),
-                                  Color.fromARGB(255, 57, 173, 219),
-                                  Color.fromARGB(255, 69, 128, 236),
-                                  Color.fromARGB(255, 3, 91, 126),
-                                ],),
+          const AppBarExpandedWidgets(
+            title: 'FLUTTER BLOC CUBIT',
+            appBarColors: <Color>[
+              Color.fromARGB(255, 138, 185, 157),
+              Color.fromARGB(255, 67, 212, 145),
+              Color.fromARGB(255, 57, 173, 219),
+              Color.fromARGB(255, 69, 128, 236),
+              Color.fromARGB(255, 3, 91, 126),
+            ],
+          ),
           Expanded(
               flex: 9,
               child: Row(
@@ -108,11 +112,15 @@ class HeartScreenThreeView extends StatelessWidget {
                               ),
                             ),
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                context.router
+                                    .push(const HeartScreenTwoRoute());
+                              },
                               child: Image.asset(flutterAnatomicalHeart,
-                                  width: MediaQuery.of(context).size.width / 8),
+                                  color: Colors.white,
+                                  width: MediaQuery.sizeOf(context).width / 8),
                             ),
-                          ))
+                          )),
                         ],
                       ))
                 ],
