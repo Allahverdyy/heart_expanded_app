@@ -2,10 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
-import 'package:heart_expanded_app/app/core/widgets/button_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/first_button_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/second_button_widget.dart';
-import 'package:heart_expanded_app/app/router/app_router.gr.dart';
+import 'package:heart_expanded_app/app/core/widgets/third_button_widget.dart';
 @RoutePage()
 class ExpandedDemoView extends StatelessWidget {
   const ExpandedDemoView({super.key});
@@ -60,27 +59,13 @@ class ExpandedDemoView extends StatelessWidget {
                           fit: BoxFit.fitHeight,
                         ),
                       )),
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: Column(
                         children: [
-                          const FirstButtonWidget(),
-                          const SecondButtonWidget(),
-                          Expanded(
-                              child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * 9 / 10,
-                            color: Colors.black,
-                            child: TextButton(
-                              onPressed: () {
-                                context.router
-                                    .push(const HeartScreenThreeRoute());
-                              },
-                              child: Image.asset(flutterAnatomicalHeart,
-                                  color: Colors.purple,
-                                  width: MediaQuery.of(context).size.width / 8),
-                            ),
-                          ))
+                          FirstButtonWidget(),
+                          SecondButtonWidget(),
+                          ThirdButtonWidget()
                         ],
                       ))
                 ],

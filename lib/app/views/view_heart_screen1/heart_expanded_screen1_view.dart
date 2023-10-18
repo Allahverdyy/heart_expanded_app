@@ -4,8 +4,7 @@ import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/first_button_widget.dart';
 import 'package:heart_expanded_app/app/core/widgets/second_button_widget.dart';
-import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart';
-import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart';
+import 'package:heart_expanded_app/app/core/widgets/third_button_widget.dart';
 
 @RoutePage()
 class HeartScreenOneView extends StatelessWidget {
@@ -52,11 +51,11 @@ class HeartScreenOneView extends StatelessWidget {
                         //   ),
                         // ),
                       )),
-                  Expanded(
+                  const Expanded(
                       flex: 1,
                       child: Column(
                         children: [
-                          const FirstButtonWidget(
+                          FirstButtonWidget(
                             firstButtonBg: <Color>[
                               Color.fromARGB(255, 169, 192, 206),
                               Color.fromARGB(255, 73, 181, 214),
@@ -65,25 +64,12 @@ class HeartScreenOneView extends StatelessWidget {
                             ],
                             imageColor: Colors.white,
                           ),
-                          const SecondButtonWidget(
+                          SecondButtonWidget(
                             imageColor: Colors.blue,
                           ),
-                          Expanded(
-                              child: Container(
-                            width: double.infinity,
-                            height: MediaQuery.of(context).size.height * 9 / 10,
-                            color: Colors.black,
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) =>
-                                        const HeartScreenThreeView()));
-                              },
-                              child: Image.asset(flutterAnatomicalHeart,
-                                  color: Colors.blue,
-                                  width: MediaQuery.of(context).size.width / 8),
-                            ),
-                          ))
+                          ThirdButtonWidget(
+                            imageColor: Colors.blue,
+                          )
                         ],
                       ))
                 ],
