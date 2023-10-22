@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
-import 'package:heart_expanded_app/app/core/widgets/appbar_expanded_widget.dart';
-import 'package:heart_expanded_app/app/core/widgets/first_button_widget.dart';
-import 'package:heart_expanded_app/app/core/widgets/second_button_widget.dart';
-import 'package:heart_expanded_app/app/core/widgets/third_button_widget.dart';
+import 'package:heart_expanded_app/core/constants/images_constants.dart';
+import 'package:heart_expanded_app/app/views/widgets/appbar_expanded_widget.dart';
+import 'package:heart_expanded_app/app/views/widgets/first_button_widget.dart';
+import 'package:heart_expanded_app/app/views/widgets/second_button_widget.dart';
+import 'package:heart_expanded_app/app/views/widgets/third_button_widget.dart';
 @RoutePage()
 class ExpandedDemoView extends StatelessWidget {
   const ExpandedDemoView({super.key});
