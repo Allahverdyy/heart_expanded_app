@@ -1,21 +1,19 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:heart_expanded_app/app/core/constants/images_constants.dart';
+import 'package:heart_expanded_app/core/constants/images_constants.dart';
 import 'package:heart_expanded_app/app/router/app_router.gr.dart';
 
-class FirstButtonWidget extends StatelessWidget {
-  final List<Color> firstButtonBg;
+class ThirdButtonWidget extends StatelessWidget {
+  final List<Color> thirdButtonBg;
   final Color imageColor;
-  const FirstButtonWidget({
+  const ThirdButtonWidget({
     super.key,
-    this.firstButtonBg = const <Color>[
+    this.thirdButtonBg = const <Color>[
             Colors.black,
             Colors.black
           ],
     this.imageColor = Colors.purple
   });
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -26,19 +24,18 @@ class FirstButtonWidget extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: const Alignment(0.8, 1),
-          colors:firstButtonBg,
+          colors: thirdButtonBg,
           tileMode: TileMode.mirror,
         ),
       ),
       child: TextButton(
         onPressed: () {
-          context.router.push(const HeartScreenOneRoute());
+          context.router
+              .push(const HeartScreenThreeRoute());
         },
-        child: Image.asset(
-          flutterHeart,
-          width: MediaQuery.of(context).size.width / 8,
-          color: imageColor
-        ),
+        child: Image.asset(flutterAnatomicalHeart,
+            color: imageColor,
+            width: MediaQuery.sizeOf(context).width / 8),
       ),
     ));
   }
