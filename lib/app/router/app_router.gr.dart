@@ -9,14 +9,13 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:heart_expanded_app/app/views/view_heart_expanded/heart_expanded_view.dart'
-    as _i1;
 import 'package:heart_expanded_app/app/views/view_heart_screen1/heart_expanded_screen1_view.dart'
-    as _i2;
+    as _i1;
 import 'package:heart_expanded_app/app/views/view_heart_screen2/heart_expanded_screen2_view.dart'
-    as _i4;
-import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart'
     as _i3;
+import 'package:heart_expanded_app/app/views/view_heart_screen3/heart_expanded_screen3_view.dart'
+    as _i2;
+import 'package:heart_expanded_app/app/views/view_home/home_view.dart' as _i4;
 import 'package:heart_expanded_app/app/views/view_splash/splash_view.dart'
     as _i5;
 
@@ -25,28 +24,28 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 
   @override
   final Map<String, _i6.PageFactory> pagesMap = {
-    ExpandedDemoRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i1.ExpandedDemoView(),
-      );
-    },
     HeartScreenOneRoute.name: (routeData) {
       return _i6.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.HeartScreenOneView(),
+        child: const _i1.HeartScreenOneView(),
       );
     },
     HeartScreenThreeRoute.name: (routeData) {
       return _i6.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i3.HeartScreenThreeView(),
+        child: const _i2.HeartScreenThreeView(),
       );
     },
     HeartScreenTwoRoute.name: (routeData) {
       return _i6.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i4.HeartScreenTwoView(),
+        child: const _i3.HeartScreenTwoView(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return _i6.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.HomeView(),
       );
     },
     SplashRoute.name: (routeData) {
@@ -59,21 +58,7 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 }
 
 /// generated route for
-/// [_i1.ExpandedDemoView]
-class ExpandedDemoRoute extends _i6.PageRouteInfo<void> {
-  const ExpandedDemoRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          ExpandedDemoRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ExpandedDemoRoute';
-
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i2.HeartScreenOneView]
+/// [_i1.HeartScreenOneView]
 class HeartScreenOneRoute extends _i6.PageRouteInfo<void> {
   const HeartScreenOneRoute({List<_i6.PageRouteInfo>? children})
       : super(
@@ -87,7 +72,7 @@ class HeartScreenOneRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.HeartScreenThreeView]
+/// [_i2.HeartScreenThreeView]
 class HeartScreenThreeRoute extends _i6.PageRouteInfo<void> {
   const HeartScreenThreeRoute({List<_i6.PageRouteInfo>? children})
       : super(
@@ -101,7 +86,7 @@ class HeartScreenThreeRoute extends _i6.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.HeartScreenTwoView]
+/// [_i3.HeartScreenTwoView]
 class HeartScreenTwoRoute extends _i6.PageRouteInfo<void> {
   const HeartScreenTwoRoute({List<_i6.PageRouteInfo>? children})
       : super(
@@ -110,6 +95,20 @@ class HeartScreenTwoRoute extends _i6.PageRouteInfo<void> {
         );
 
   static const String name = 'HeartScreenTwoRoute';
+
+  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i4.HomeView]
+class HomeRoute extends _i6.PageRouteInfo<void> {
+  const HomeRoute({List<_i6.PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
 
   static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
 }

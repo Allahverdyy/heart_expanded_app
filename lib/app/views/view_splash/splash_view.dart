@@ -18,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 5),(){
-      context.router.push(const ExpandedDemoRoute());
+      context.router.push(const HomeRoute());
     });
   }
   @override
