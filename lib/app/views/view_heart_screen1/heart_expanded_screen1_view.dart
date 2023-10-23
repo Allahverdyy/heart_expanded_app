@@ -203,7 +203,7 @@ class HeartScreenOneView extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(18.0),
                                           side: const BorderSide(
-                                              color: blueteam4))),
+                                              color: blueteam1))),
                                   // shadowColor:
                                   //     MaterialStatePropertyAll(Colors.amber),
                                 ),
