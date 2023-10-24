@@ -14,6 +14,37 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  int _currentIndex = 0;
+  int _currentCharIndex = 0;
+
+  final List<String> _strings = [
+    "FLUTTER'S NOTEBOOKS",
+    "FLUTTER'S ROAD MAP",
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _typeWritingAnimation();
+  }
+
+  void _typeWritingAnimation() {
+    if (_currentCharIndex < _strings[_currentIndex].length) {
+      setState(() {
+        _currentCharIndex++;
+      });
+    } else {
+      setState(() {
+        _currentIndex = (_currentIndex + 1) % _strings.length;
+        _currentCharIndex = 0;
+      });
+    }
+
+    Future.delayed(const Duration(milliseconds: 150), () {
+      _typeWritingAnimation();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,20 +53,28 @@ class _HomeViewState extends State<HomeView> {
             image:
                 DecorationImage(image: AssetImage(homebg0), fit: BoxFit.cover)),
         child: Column(
-          children:<Widget> [
+          children: <Widget>[
             const SizedBox(
               height: 20,
             ),
-            Image.asset(flutterBg, width: MediaQuery.sizeOf(context).width /2,),
+            Image.asset(
+              flutterBg,
+              width: MediaQuery.sizeOf(context).width / 2,
+            ),
             const SizedBox(
               height: 20,
             ),
-            const Center(
-                child: Text(
-              "FLUTTER'S NOTEBOOK",
-              style:
-                  TextStyle(color: white, fontSize: 25, fontFamily: 'Georgia', fontWeight: FontWeight.bold),
-            )),
+            Center(
+              child: Text(
+              _strings[_currentIndex].substring(0, _currentCharIndex),
+              style: const TextStyle(
+                color: white,
+                fontSize: 25,
+                fontFamily: 'Georgia',
+                fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),
