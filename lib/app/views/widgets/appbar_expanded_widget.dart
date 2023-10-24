@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:heart_expanded_app/app/router/app_router.gr.dart';
+import 'package:heart_expanded_app/core/constants/colors_constants.dart';
+import 'package:heart_expanded_app/core/constants/images_constants.dart';
 
 class AppBarExpandedWidgets extends StatelessWidget {
   final List<Color> appBarColors;
@@ -18,13 +20,14 @@ class AppBarExpandedWidgets extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.1,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: const Alignment(0.8, 1),
-              colors: appBarColors,
-              tileMode: TileMode.mirror,
-            ),
+          decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage(homebg1), fit: BoxFit.none),
+            // gradient: LinearGradient(
+            //   begin: Alignment.topLeft,
+            //   end: const Alignment(0.8, 1),
+            //   colors: appBarColors,
+            //   tileMode: TileMode.mirror,
+            // ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -51,7 +54,7 @@ class AppBarExpandedWidgets extends StatelessWidget {
                         onTap: () {
                           context.router.push(const HomeRoute());
                         },
-                        child: Image.asset('assets/images/png/images_home.png' , width: MediaQuery.sizeOf(context).width*3/5, height: MediaQuery.sizeOf(context).width*3/5,),
+                        child: Icon(Icons.home_rounded, size: 50, color: blueteam1,),
                       )))
             ],
           ),

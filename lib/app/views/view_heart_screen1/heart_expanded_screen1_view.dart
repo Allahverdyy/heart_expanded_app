@@ -20,10 +20,10 @@ class HeartScreenOneView extends StatelessWidget {
           const AppBarExpandedWidgets(
             title: 'DART VE FLUTTER',
             appBarColors: <Color>[
-              blueteam1,
-              blueteam2,
-              blueteam3,
               blueteam4,
+              blueteam3,
+              blueteam2,
+              blueteam1,
             ],
           ),
           Expanded(
@@ -152,7 +152,7 @@ class HeartScreenOneView extends StatelessWidget {
                                             height: 10,
                                           ),
                                           Text(
-                                            "Google tarafından geliştirilen bir kullanıcı arayüzü (UI) yazılım geliştirme kitidir.Flutter, tek bir kod tabanıyla Android, iOS, Windows, Mac, Linux ve web gibi farklı platformlarda çalışabilen yüksek performanslı ve şık mobil uygulamalar oluşturmanızı sağlar.",
+                                            "Google tarafından geliştirilen bir kullanıcı arayüzü (UI) yazılım geliştirme kitidir.Flutter, tek bir kod tabanıyla birçok farklı platformlarda(Android, IOS vb.) çalışabilen yüksek performanslı ve şık mobil uygulamalar oluşturmanızı sağlar.",
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20),
@@ -196,7 +196,7 @@ class HeartScreenOneView extends StatelessWidget {
                                 ),
                                 style: ButtonStyle(
                                   backgroundColor:
-                                      MaterialStatePropertyAll(blueteam4),
+                                      const MaterialStatePropertyAll(blueteam4),
                                   shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
                                       RoundedRectangleBorder(

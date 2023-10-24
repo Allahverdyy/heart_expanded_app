@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 const Color white = Colors.white;
+const Color black = Colors.black;
 const Color blueteam1 = Color.fromARGB(255, 169, 192, 206);
 const Color blueteam2 = Color.fromARGB(255, 73, 181, 214);
 const Color blueteam3 = Color.fromARGB(255, 79, 174, 252);
