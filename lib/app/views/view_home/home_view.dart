@@ -51,9 +51,9 @@ class _HomeViewState extends State<HomeView> {
       body: Container(
         decoration: const BoxDecoration(
             image:
-                DecorationImage(image: AssetImage(homebg0), fit: BoxFit.cover)),
+                DecorationImage(image: AssetImage(homebg2), fit: BoxFit.cover)),
         child: Column(
-          children: <Widget>[
+          children: [
             const SizedBox(
               height: 20,
             ),
